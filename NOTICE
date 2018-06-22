@@ -1,0 +1,18 @@
+OSEHRA Modifications
+
+This product includes software developed for the Open Source
+Electronic Health Record Alliance (http://www.osehra.org/).
+
+This product includes software developed at the US Department of
+Veterans Affairs and released into the public domain via the Freedom
+of Information Act (FOIA).  Portions of the software not modified from
+the FOIA release remain in the public domain.
+
+ICDEXA2 modified by George Lilly and David Whitten (c) 2015.
+ICDEXA2 was not bug free; and was fixed by Sam Habiel (c) 2018.
+
+ORWORR1, DGRPD, MPIFXMLP (c) Sam Habiel 2018.
+
+If a routine has been modified, one of the authors' names will be on the first
+few lines and what code in the routine they authored. Any code they did not
+author is in the public domain as far as can be ascertained.

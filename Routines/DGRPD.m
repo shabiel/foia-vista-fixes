@@ -1,4 +1,4 @@
-DGRPD ;ALB/MRL,MLR,JAN,LBD,EG,BRM,JRC,BAJ,KUM - PATIENT INQUIRY (NEW) ;2018-06-22  12:21 PM
+DGRPD ;ALB/MRL,MLR,JAN,LBD,EG,BRM,JRC,BAJ,KUM - PATIENT INQUIRY (NEW) ;2018-06-22  12:29 PM
  ;;5.3;Registration;**109,124,121,57,161,149,286,358,436,445,489,498,506,513,518,550,545,568,585,677,703,688,887,907,925,936,940,OSEHRA**;Aug 13, 1993;Build 11
  ;  *286*  Newing variables X,Y in OKLINE subroutine
  ;  *358*  If a patient is on a domiciliary ward, don't display MEANS
@@ -14,7 +14,7 @@ DGRPD ;ALB/MRL,MLR,JAN,LBD,EG,BRM,JRC,BAJ,KUM - PATIENT INQUIRY (NEW) ;2018-06-2
  ;  Integration Agreements:
  ;        6138 - DGHBPUTL API
  ;
- ; *OSEHRA Change is a single character change (remove space). No copyright claimed on that!
+ ; *OSEHRA Change is a single character change (remove space). (c) Sam Habiel 2018
  ;
 SEL K DFN,DGRPOUT W ! S DIC="^DPT(",DIC(0)="AEQMZ" D ^DIC G Q:Y'>0 S DFN=+Y N Y W ! S DIR(0)="E" D ^DIR G SEL:$D(DTOUT)!($D(DUOUT)) D EN G SEL
 EN ;call to display patient inquiry - input DFN
