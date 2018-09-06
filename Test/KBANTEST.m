@@ -1,4 +1,4 @@
-KBANTEST ; OSE/SMH - Unit Tests for Minor OSEHRA fixes to FOIA;2018-06-22  12:16 PM
+KBANTEST ; OSE/SMH - Unit Tests for Minor OSEHRA fixes to FOIA;2018-09-06  10:08 AM
  ;;0.0;No package;
  ;
  D EN^%ut($T(+0),3)
@@ -40,3 +40,12 @@ DGRPD ; @TEST Printing Patient Profile. Shouldn't crash
  D ^%ZISC
  D SUCCEED^%ut
  QUIT
+ ;
+DIUTL ; @TEST $ZREFERENCE error in DIUTL. Shouldn't crash.
+ ; ** RUN AWAY FROM ALL THE NAKEDNESS ** -- That's the whole point.
+ I ^VA(200,1,1.1)
+ N % S %=$$NAKED^DIUTL("$$DATE^DIUTL(+^(1.1))")
+ I $D(^(1.1))
+ D CHKEQ^%ut($$LGR^%ZOSV,"^VA(200,1,1.1)")
+ QUIT
+ ;
