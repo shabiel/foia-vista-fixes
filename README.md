@@ -16,12 +16,12 @@ List of fixes/Change Log
  * PATIENT^MPIFXMLP: Change to ZPATIENT so that it won't be found by patient registration. We can't use MPI outside of VA.
  * DIUTL: Upstream fix from MSC Fileman 1060: $ZREFERENCE is not standard.
  * HLCSTCP3: USE command arguments are vendor specific. Check for M Virtual machine implementor before choosing USE command arguments.
+ * ICDEX: MD tag missing quit, resulting on ,M11, error on GTM/YDB.
 
 Install Instructions
 --------------------
-These routines are not intended for installation as a KIDS build. Instead, a
-traditional unix patch produced from this repository is intended to be applied
-to destination systems.
+No specific install instructions are provided here. End users are expected to
+either apply the routines directly or apply a patch from a diff.
 
 Documentation
 -------------
@@ -48,6 +48,7 @@ MPIFXMLP  value = 91199700
 ORWORR1   value = 10672924
 DIUTL     value = 15279092
 HLCSTCP3  value = 17671512
+ICDEX     value = 77445669
 ```
 
 Unit Tests
@@ -62,6 +63,7 @@ ICDEXA2 - ICDEXA2 will work w/o converting ICDO to numbers........
 ORWORR1 - GET1^ORWORR1 contains && that crashes GTM.----------  [OK]    0.057ms
 DGRPD - Printing Patient Profile. Shouldn't crash.------------  [OK]    2.268ms
 DIUTL - $ZREFERENCE error in DIUTL. Shouldn't crash..---------  [OK]    0.072ms
+ICDEX - MD^ICDEX - missing quit.------------------------------  [OK]    0.386ms
 ```
 
 There are no tests supplied right now for HLCSTCP3--it's too difficult to test. I am
