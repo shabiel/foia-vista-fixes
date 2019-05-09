@@ -1,4 +1,4 @@
-KBANTEST ; OSE/SMH - Unit Tests for Minor OSEHRA fixes to FOIA;Jan 15, 2019@11:30
+KBANTEST ; OSE/SMH - Unit Tests for Minor OSEHRA fixes to FOIA;2019-05-09  10:52 AM
  ;;0.0;No package;
  ;
  D EN^%ut($T(+0),3)
@@ -30,15 +30,6 @@ ORWORR1 ; @TEST GET1^ORWORR1 contains && that crashes GTM
  S ^TMP("ORR",$J,ORLIST,1)=1
  S ^TMP("ORR",$J,ORLIST,"TOT")=1
  D GET1^ORWORR1
- D SUCCEED^%ut
- QUIT
- ;
-DGRPD ; @TEST Printing Patient Profile. Shouldn't crash
- ; ZEXCEPT: IOP,DFN
- S IOP="NULL;P-OTHER;80;999999" D ^%ZIS
- U IO
- S DFN=1 D EN^DGRPD
- D ^%ZISC
  D SUCCEED^%ut
  QUIT
  ;
