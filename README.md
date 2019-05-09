@@ -12,7 +12,6 @@ List of fixes/Change Log
 ------------------------
  * ICDEXA2 (passim): Don't convert codes to numbers. Codes may exceed implementation defined limit for numbers. On YDB, original code goes into infinite loop.
  * GET1+3^ORWORR1: Replace && with commas for if, to enforce 'and' with no side effects.
- * EN+16^DGRPD: Errant space needs to be removed.
  * PATIENT^MPIFXMLP: Change to ZPATIENT so that it won't be found by patient registration. We can't use MPI outside of VA.
  * DIUTL: Upstream fix from MSC Fileman 1060: $ZREFERENCE is not standard.
  * HLCSTCP3: USE command arguments are vendor specific. Check for M Virtual machine implementor before choosing USE command arguments.
@@ -42,13 +41,12 @@ No package supplied.
 Checksums
 ---------
 ```
-DGRPD     value = 81056945
-ICDEXA2   value = 81003688
-MPIFXMLP  value = 91199700
-ORWORR1   value = 10672924
 DIUTL     value = 15279092
 HLCSTCP3  value = 17671512
 ICDEX     value = 77445669
+ICDEXA2   value = 81003688
+MPIFXMLP  value = 92403742
+ORWORR1   value = 10672924
 ```
 
 Unit Tests
@@ -56,14 +54,16 @@ Unit Tests
 Routine KBANTEST checks that the fixes are in effect. On GT.M, all the tests should fail.
 Expected Output:
 ```
- ---------------------------------- KBANTEST ----------------------------------
-MPIFXMLP - PATIENT^MPIFXMLP does not exist.-------------------  [OK]    0.038ms
+---------------------------------- KBANTEST ----------------------------------
+MPIFXMLP - PATIENT^MPIFXMLP does not exist.-------------------  [OK]    6.518ms
 ICDEXA2 - ICDEXA2 will work w/o converting ICDO to numbers........
- -------------------------------------------------------------  [OK]   23.256ms
-ORWORR1 - GET1^ORWORR1 contains && that crashes GTM.----------  [OK]    0.057ms
-DGRPD - Printing Patient Profile. Shouldn't crash.------------  [OK]    2.268ms
-DIUTL - $ZREFERENCE error in DIUTL. Shouldn't crash..---------  [OK]    0.072ms
-ICDEX - MD^ICDEX - missing quit.------------------------------  [OK]    0.386ms
+ -------------------------------------------------------------  [OK]   40.029ms
+ORWORR1 - GET1^ORWORR1 contains && that crashes GTM.----------  [OK]    5.079ms
+DIUTL - $ZREFERENCE error in DIUTL. Shouldn't crash..---------  [OK]    3.045ms
+ICDEX - MD^ICDEX - missing quit.------------------------------  [OK]   13.136ms
+
+Ran 1 Routine, 5 Entry Tags
+Checked 12 tests, with 0 failures and encountered 0 errors.
 ```
 
 There are no tests supplied right now for HLCSTCP3--it's too difficult to test. I am
